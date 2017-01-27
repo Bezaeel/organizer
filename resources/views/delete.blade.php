@@ -3,6 +3,7 @@
 @section('content')
 
 <div>
+<h4>Are you sure you want to delete?</h4>
 	<hr/>
 	<dl class="dl-horizontal">
         <dt>
@@ -16,7 +17,7 @@
         <dt>
             <label class="control-label col-md-2" for="work">work</label>
         </dt>
-        
+
         <dd>
             {{$user->work}}
         </dd>
@@ -47,7 +48,12 @@
 
 	</dl>
 
-	<a href="/phonebook">Back to list</a> |
-	<a href="/phonebook/edit/{{$user->id}}">Edit</a>
+    <form action="/phonebook/delete/{{$user->id}}" method="post">
+    {!! csrf_field() !!} 
+        <a href="/phonebook">Back to list</a> |
+        <input class="btn btn-default" type="submit" value="Delete">
+    </form>
+
+	
 </div>
 @endsection

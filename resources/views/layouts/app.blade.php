@@ -9,25 +9,19 @@
 
     <!-- Fonts -->
     
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/fonts/fontawesome-webfont.svg')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/fonts/glyphicons-halflings-regular.svg')}}">
 
     <!-- Styles -->
     
 
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/Site.css')}}">
 
-    <style>
-        body {
-            font-family: 'Lato';
-        }
-
-        .fa-btn {
-            margin-right: 6px;
-        }
-    </style>
+    
+    <script type="text/javascript" src="{{asset('assets/js/modernizr-2.6.2.js')}}"></script>
 </head>
 <body id="app-layout">
-    <nav class="navbar navbar-default navbar-static-top">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
  
@@ -48,7 +42,7 @@
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
-                    <li><a href="{{ url('/home') }}">Home</a></li>
+                    <li><a href="{{ url('/') }}">Home</a></li>
                     <li><a href="{{ url('/phonebook') }}">Phone Book</a></li>
                 </ul>
 
@@ -74,11 +68,18 @@
         </div>
     </nav>
 
-    @yield('content')
+<div class="container body-content">
+	@yield('content')
+</div>
+    
 
     <!-- JavaScripts -->
     
-    <script src="{{asset('assets/js/jquery.js')}}"></script>
+    <script src="{{asset('assets/js/jquery-1.10.2.min.js')}}"></script>
     <script src="{{asset('assets/js/bootstrap.min.js')}}"></script>
+    <script src="{{asset('assets/js/respond.min.js')}}"></script>
 </body>
 </html>
+
+
+

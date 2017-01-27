@@ -94,7 +94,19 @@ class info extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
+    // GET
     public function destroy($id)
+    {
+        //
+        $user = phonebook::find($id);
+        return view('delete', compact('user'));
+    }
+
+
+    // POST
+
+    public function destroyConfirmed($id)
     {
         //
         $user = phonebook::find($id);

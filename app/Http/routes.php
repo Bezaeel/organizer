@@ -29,6 +29,7 @@ Route::get('phonebook/details/{id}', 'info@show');
 Route::get('phonebook/edit/{id}', 'info@edit');
 Route::patch('phonebook/update/{id}', 'info@update');
 Route::get('phonebook/delete/{id}', 'info@destroy');
+Route::post('phonebook/delete/{id}', 'info@destroyConfirmed');
 
 
 

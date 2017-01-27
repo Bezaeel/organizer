@@ -61,4 +61,7 @@
 
 <a href="/phonebook">Back to list</a>
 </div>
+
+<script src="{{asset('assets/js/jquery.validate.min.js')}}"></script>
+<script src="{{asset('assets/js/jquery.validate.unobtrusive.min.js')}}"></script>
 @endsection
