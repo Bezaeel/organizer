@@ -21,7 +21,7 @@
     <script type="text/javascript" src="{{asset('assets/js/modernizr-2.6.2.js')}}"></script>
 </head>
 <body id="app-layout">
-    <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
  
@@ -35,7 +35,7 @@
 
                 <!-- Branding Image -->
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    Laravel
+                    Organizer
                 </a>
             </div>
 
@@ -66,12 +66,9 @@
                 </ul>
             </div>
         </div>
-    </nav>
+    </div>
 
-<div class="container body-content">
 	@yield('content')
-</div>
-    
 
     <!-- JavaScripts -->
     

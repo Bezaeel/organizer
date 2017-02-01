@@ -2,30 +2,20 @@
 
 namespace App\Http\Controllers;
 
-use Request;
+use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
-use App\phonebook;
-
-class info extends Controller
+class voucher extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-
-    public function __construct(){
-        $this->middleware('auth');
-    }
-
-
     public function index()
     {
         //
-        $user = phonebook::all();
-        return view("phonebook", compact("user"));
     }
 
     /**
@@ -33,10 +23,11 @@ class info extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function add()
+    public function create()
     {
         //
-        return view('create');
+        $random = random(1, 5);
+        print_r($random);
     }
 
     /**
@@ -48,9 +39,6 @@ class info extends Controller
     public function store(Request $request)
     {
         //
-        phonebook::create(Request::all());
-
-        return redirect('phonebook');   
     }
 
     /**
@@ -62,8 +50,6 @@ class info extends Controller
     public function show($id)
     {
         //
-        $user = phonebook::find($id);
-        return view('details', compact('user'));
     }
 
     /**
@@ -75,8 +61,6 @@ class info extends Controller
     public function edit($id)
     {
         //
-        $user = phonebook::find($id);
-        return view('update', compact('user'));
     }
 
     /**
@@ -89,9 +73,6 @@ class info extends Controller
     public function update(Request $request, $id)
     {
         //
-        $user = phonebook::findorFail($id);
-        $user->update(Request::all());
-        return redirect('phonebook');
     }
 
     /**
@@ -100,23 +81,8 @@ class info extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-
-    // GET
     public function destroy($id)
     {
         //
-        $user = phonebook::find($id);
-        return view('delete', compact('user'));
-    }
-
-
-    // POST
-
-    public function destroyConfirmed($id)
-    {
-        //
-        $user = phonebook::find($id);
-        $user->delete();
-        return redirect('phonebook');
     }
 }

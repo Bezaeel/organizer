@@ -8,7 +8,7 @@ use App\Http\Requests;
 
 use App\phonebook;
 
-class info extends Controller
+class phone extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -20,12 +20,12 @@ class info extends Controller
         $this->middleware('auth');
     }
 
-
     public function index()
     {
         //
         $user = phonebook::all();
         return view("phonebook", compact("user"));
+
     }
 
     /**
@@ -33,7 +33,7 @@ class info extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function add()
+    public function create()
     {
         //
         return view('create');
@@ -49,8 +49,7 @@ class info extends Controller
     {
         //
         phonebook::create(Request::all());
-
-        return redirect('phonebook');   
+        return redirect('phonebook');
     }
 
     /**
@@ -59,7 +58,7 @@ class info extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function details($id)
     {
         //
         $user = phonebook::find($id);
@@ -89,7 +88,7 @@ class info extends Controller
     public function update(Request $request, $id)
     {
         //
-        $user = phonebook::findorFail($id);
+        $user = phonebook::find($id);
         $user->update(Request::all());
         return redirect('phonebook');
     }
@@ -100,19 +99,14 @@ class info extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-
-    // GET
-    public function destroy($id)
+    public function delete($id)
     {
         //
         $user = phonebook::find($id);
         return view('delete', compact('user'));
     }
 
-
-    // POST
-
-    public function destroyConfirmed($id)
+    public function deleteConfirmed($id)
     {
         //
         $user = phonebook::find($id);

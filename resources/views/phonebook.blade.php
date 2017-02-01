@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div>
+<div class="container body-content">
 	<p>
 		<a href="phonebook/create">Create</a>
 	</p>

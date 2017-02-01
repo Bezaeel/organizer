@@ -19,18 +19,25 @@ Route::get('/', function () {
 
 Route::auth();
 
-Route::get('phonebook/create', 'info@create');
-Route::post('phonebook/store', 'info@store');
-Route::get('phonebook',[
-	'middleware'=>'auth',
-	'uses'=>'info@index'
-]);
-Route::get('phonebook/details/{id}', 'info@show');
-Route::get('phonebook/edit/{id}', 'info@edit');
-Route::patch('phonebook/update/{id}', 'info@update');
-Route::get('phonebook/delete/{id}', 'info@destroy');
-Route::post('phonebook/delete/{id}', 'info@destroyConfirmed');
+Route::get('phonebook/create', 'phone@create');
+Route::post('phonebook/store', 'phone@store');
+// Route::get('phonebook',[
+// 	'middleware'=>'auth',
+// 	'uses'=>'info@index'
+// ]);
+// Route::get('phonebook', function(){
+// 	return view('phonebook', compact('user'));
+// })->middleware('auth');
 
+Route::get('phonebook', 'phone@index');
+Route::get('phonebook/details/{id}', 'phone@details');
+Route::get('phonebook/edit/{id}', 'phone@edit');
+Route::patch('phonebook/update/{id}', 'phone@update');
+Route::get('phonebook/delete/{id}', 'phone@delete');
+Route::post('phonebook/delete/{id}', 'phone@deleteConfirmed');
+
+
+Route::get('voucher', 'voucher@create');
 
 
 

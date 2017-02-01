@@ -22,4 +22,13 @@ class TestCase extends Illuminate\Foundation\Testing\TestCase
 
         return $app;
     }
+
+    // public function testViews()
+    // {
+    //     $this->visit('/')
+    //          ->see('Laravel 5');
+
+    //     $this->visit('phonebook/create')
+    //          ->see('create');
+    // }
 }

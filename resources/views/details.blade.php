@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div>
+<div class="container body-content">
 	<hr/>
 	<dl class="dl-horizontal">
         <dt>
@@ -16,7 +16,7 @@
         <dt>
             <label class="control-label col-md-2" for="work">work</label>
         </dt>
-        
+
         <dd>
             {{$user->work}}
         </dd>
